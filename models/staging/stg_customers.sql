@@ -11,8 +11,10 @@ transformed as(
         , cast(first_name || ' ' || last_name as string) as customer_fullname
         , cast(email as string) as customer_email
         , cast(address_id as integer) as address_id
-        , cast(activebool as integer) as activebool_int
-        , cast(create_date as date) as created_at
+        -- , cast(activebool as integer) as activebool_int, todos os valores são 1(true)
+        -- , create_date as date, todos os valores são iguais a 2006-02-14, 
+        --   sendo uma data superior a todas as datas da tabela rentals,
+        --   portanto é um dado irrelevante
         , cast(last_update as timestamp) as updated_at
         , cast(active as integer) as active
     from source

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_dates
+    description: Dimensão de datas de aluguel e retorno da Discorama
+    columns:
+      - name: sk_date
+        description: Surrogate key da dim_dates.
+        tests:
+          - unique
+          - not_null
+      - name: day
+        description: Dia do mês.
+      - name: month
+        description: Número do mês.
+      - name: month_abbreviation
+        description: Nome abreviado do mês.
+      - name: weekday
+        description: Número do dia da semana.
+      - name: day_of_week
+        description: Nome do dia da semana.
+      - name: quarter
+        description: Quarto de ano.
+      - name: year
+        description: Ano.
+
+      

@@ -6,7 +6,6 @@ transformed as(
     select
         cast(address_id as integer) as address_id
         , cast(address as string) as address
-        , cast(address2 as string) as address2
         , cast(district as string) as district
         , cast(city_id as integer) as city_id
         , cast(postal_code as integer) as postal_code

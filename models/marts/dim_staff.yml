@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_staff
+    description: Dimensão de funcionários da Discorama.
+    columns:
+      - name: sk_staff
+        description: Surrogate key da dim_staff.
+        tests:
+          - unique
+          - not_null
+      - name: staff_id
+        description: Chave primária da stg_staff.
+      - name: staff_fullname
+        description: Nome completo do funcionário.
+      - name: store_id
+        description: Chave primária da loja em que o funcionário trabalha.
+      - name: store_city
+        description: Cidade da loja em que o funcionário trabalha.
+      - name: store_district
+        description: Distrito da loja em que o funcionário trabalha.
+      - name: store_country
+        description: País da loja em que o funcionário trabalha.
