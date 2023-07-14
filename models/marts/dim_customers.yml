@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Dimensão de clientes da Discorama.
+    columns:
+      - name: sk_customer
+        description: Surrogate key da dim_customers.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Chave primária da stg_customers.
+      - name: customer_fullname
+        description: Nome completo do cliente.
+      - name: customer_city
+        description: Cidade do cliente.
+      - name: customer_district
+        description: Distrito do cliente.
+      - name: customer_country
+        description: País do cliente.

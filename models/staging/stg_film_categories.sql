@@ -10,4 +10,5 @@ transformed as(
     from source
 )
 
-select * from transformed
+select *
+from transformed
