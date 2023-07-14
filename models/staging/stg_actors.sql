@@ -13,4 +13,4 @@ transformed as(
     order by 1
 )
 
-select count(distinct actor_id) from transformed
+select * from transformed
