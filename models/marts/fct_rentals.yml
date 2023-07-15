@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: fct_rentals
-    description: Tabala fatos de aluguel, uma linha por aluguel.
+    description: Tabela fatos de aluguel, uma linha por aluguel.
     columns:
       - name: sk_rental
         description: Surrogate key do aluguel (stg_address).

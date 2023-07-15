@@ -46,3 +46,5 @@ models:
         description: Chave estrangeira do pagamento (stg_payments)
       - name: payment_amount
         description: Total pago.
+      - name: payment_date
+        description: Data do pagamento.   

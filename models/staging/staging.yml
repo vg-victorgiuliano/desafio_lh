@@ -106,8 +106,6 @@ models:
         description: Chave primária da stg_films.
       - name: film_title
         description: Título do filme.
-      - name: film_release_year
-        description: Ano de lançamento do filme.
       - name: rental_duration
         description: Duração do aluguel.
       - name: rental_rate
@@ -121,7 +119,7 @@ models:
       - name: updated_at
         description: Última atualiação do dado.
       - name: special_features
-        description: Características especiais
+        description: Recursos adicionais
   - name: stg_inventory
     description: Uma linha por produto disponivel.
     columns:

@@ -29,3 +29,5 @@ models:
         description: Custo de reposição.
       - name: film_rating
         description: Classificação geral do filme.
+      - name: special_features
+        description: Recursos adicionais.
