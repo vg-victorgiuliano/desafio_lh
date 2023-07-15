@@ -1,0 +1,199 @@
+version: 2
+
+models:
+  - name: stg_actors
+    description: Uma linha por ator.
+    columns:
+      - name: actor_id
+        description: Chave Primária da stg_actors.
+      - name: actor_first_name
+        description: Primeiro nome do ator.
+      - name: actor_last_name
+        description: Sobrenome do ator.
+      - name: actor_full_name
+        description: Nome completo do ator.
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_address
+    description: Uma linha por endereço.
+    columns:
+      - name: address_id
+        description: Chave Primária da stg_address.
+      - name: address
+        description: Endereço.
+      - name: district
+        description: Distrito do endereço.
+      - name: city_id
+        description: Chave Primária da stg_cities .
+      - name: postal_code
+        description: Código Postal.
+      - name: phone_number
+        description: Número telefônico.
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_categories
+    description: Uma linha por categoria.
+    columns:
+      - name: category_id
+        description: Chave Primária da stg_categories.
+      - name: category_name
+        description: Nome da categoria.
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_cities
+    description: Uma linha por cidade.
+    columns:
+      - name: city_id
+        description: Chave Primária da stg_cities.
+      - name: city_name
+        description: Nome da cidade.
+      - name: country_id
+        description: Chave Primária da stg_countries.
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_countries
+    description: View da tabela de países do sistema ERP da Discorama.
+    columns:
+      - name: country_id
+        description: Uma linha por país.
+      - name: country_name
+        description: Nome do país.
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_customers
+    description: Uma linha por cliente.
+    columns:
+      - name: customer_id
+        description: Chave Primária da stg_customers.
+      - name: store_id
+        description: Chave Primária da loja do cliente (stg_stores).
+      - name: customer_firstname
+        description: Primeiro nome do cliente.
+      - name: customer_lastname
+        description: Sobrenome do cliente.
+      - name: customer_fullname
+        description: Nome completo do cliente.
+      - name: customer_email
+        description: Email do cliente.
+      - name: address_id
+        description: Chave Primária do endereço do cliente (stg_address)
+      - name: updated_at
+        description: Última atualiação do dado.
+      - name: active
+        description: Status de atividade (0, 1).
+  - name: stg_film_actors
+    description: Tabela que relaciona filmes e atores.
+    columns:
+      - name: actor_id
+        description: Chave Primária do ator (stg_actors).
+      - name: film_id
+        description: Chave Primária do filme (stg_films).
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_film_categories
+    description: Tabela que relaciona filmes e categorias.
+    columns:
+      - name: category_id
+        description: Chave Primária da categoria (stg_categories).
+      - name: film_id
+        description: Chave Primária do filme (stg_films).
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_films
+    description: Uma linha por filme.
+    columns:
+      - name: film_id
+        description: Chave primária da stg_films.
+      - name: film_title
+        description: Título do filme.
+      - name: film_release_year
+        description: Ano de lançamento do filme.
+      - name: rental_duration
+        description: Duração do aluguel.
+      - name: rental_rate
+        description: Classificação do aluguel.
+      - name: film_length
+        description: Duração do filme
+      - name: replacement_cost
+        description: Custo de reposição.
+      - name: film_rating
+        description: Classificação geral do filme.
+      - name: updated_at
+        description: Última atualiação do dado.
+      - name: special_features
+        description: Características especiais
+  - name: stg_inventory
+    description: Uma linha por produto disponivel.
+    columns:
+      - name: inventory_id
+        description: Chave primária da stg_inventory.
+      - name: film_id
+        description: Chave primária do filme (stg_films).
+      - name: store_id
+        description: Chave primária da loja (stg_stores).
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_payments
+    description: Uma linha por pagamento processado.
+    columns:
+      - name: payment_id
+        description: Chave primária da stg_inventory.
+      - name: customer_id
+        description: Chave primária do filme (stg_films).
+      - name: staff_id
+        description: Chave primária do funcionario (stg_staff).
+      - name: rental_id
+        description: Chave primária do aluguel (stg_rentals).
+      - name: payment_amount
+        description: Valor do pagamento.
+      - name: payment_date
+        description: Data do pagamento.
+  - name: stg_rentals
+    description: Uma linha por aluguel feito.
+    columns:
+      - name: rental_id
+        description: Chave primária da stg_rentals.
+      - name: rental_date
+        description: Data do aluguel.
+      - name: inventory_id
+        description: Chave primária do inventário (stg_inventory).
+      - name: customer_id
+        description: Chave primária do cliente (stg_customer).
+      - name: return_date
+        description: Data do retorno.
+      - name: staff_id
+        description: Chave primária do funcionario (stg_staff).
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_staff
+    description: Uma linha por funcionário.
+    columns:
+      - name: staff_id
+        description: Chave primária da stg_staff.
+      - name: store_id
+        description: Chave Primária da loja do funcionário (stg_stores).
+      - name: staff_firstname
+        description: Primeiro nome do funcionário.
+      - name: staff_lastname
+        description: Sobrenome do funcionário.
+      - name: staff_fullname
+        description: Nome completo do funcionário.
+      - name: staff_email
+        description: Email do funcionário.
+      - name: address_id
+        description: Chave Primária do endereço do funcionário (stg_address).
+      - name: active_int
+        description: Status de atividade (0, 1).
+      - name: updated_at
+        description: Última atualiação do dado.
+  - name: stg_stores
+    description: Uma linha por loja.
+    columns:
+      - name: store_id
+        description: Chave primária da stg_stores.
+      - name: manager_staff_id
+        description: Chave Primária do funcionário gerente (stg_staff).
+      - name: address_id
+        description: Chave Primária do enderço da loja (stg_address).
+      - name: updated_at
+        description: Última atualiação do dado.
