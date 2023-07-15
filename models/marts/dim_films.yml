@@ -12,14 +12,14 @@ models:
       - name: film_id
         description: Chave primária da stg_films.
       - name: film_title
-        description: Título d filme.
+        description: Título do filme.
       - name: film_release_year
         description: Ano de lançamento do filme.
       - name: category_name
         description: Categoria do filme.
       - name: list_of_actors
         description: lista de atores presentes no filme.
-      - name: renatl_duration
+      - name: rental_duration
         description: Duração do aluguel.
       - name: rental_rate
         description: Classificação do aluguel.

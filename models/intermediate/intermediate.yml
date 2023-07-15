@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: int_address
+    description: Tabale intermediaria de endereços.
+    columns:
+      - name: address_id
+        description: Chave primária do endereço (stg_address).
+        tests:
+          - unique
+          - not_null
+      - name: address
+        description: Endereço.
+      - name: city_name
+        description: Nome da cidade.
+      - name: district
+        description: Nome do distrito.
+      - name: country_name
+        description: Nome do país.
+      - name: postal_code
+        description: Código Postal.
+
+  - name: int_rentals
+    description: Tabale intermediaria de aluguéis.
+    columns:
+      - name: sk_rental
+        description: Surrogate key da int_rentals.
+        tests:
+          - unique
+          - not_null
+      - name: rental_id
+        description: Chave primária do aluguel (stg_rentals)
+      - name: film_id
+        description: Chave estrangeira do filme (stg_films)
+      - name: customer_id
+        description: Chave estrangeira do cliente (stg_customers)
+      - name: staff_id
+        description: Chave estrangeira do funcionário (stg_customers)
+      - name: rental_date
+        description: Data do aluguel
+      - name: return_date
+        description: Data do retorno
+      - name: inventory_id
+        description: Chave estrangeira do inventário (stg_inventory)
+      - name: payment_id
+        description: Chave estrangeira do pagamento (stg_payments)
+      - name: payment_amount
+        description: Total pago.
