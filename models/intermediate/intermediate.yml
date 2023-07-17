@@ -21,7 +21,7 @@ models:
         description: Código Postal.
 
   - name: int_rentals
-    description: Tabale intermediaria de aluguéis.
+    description: Tabale intermediaria de locações.
     columns:
       - name: sk_rental
         description: Surrogate key da int_rentals.
@@ -29,7 +29,7 @@ models:
           - unique
           - not_null
       - name: rental_id
-        description: Chave primária do aluguel (stg_rentals)
+        description: Chave primária da locação (stg_rentals)
       - name: film_id
         description: Chave estrangeira do filme (stg_films)
       - name: customer_id
@@ -37,7 +37,7 @@ models:
       - name: staff_id
         description: Chave estrangeira do funcionário (stg_customers)
       - name: rental_date
-        description: Data do aluguel
+        description: Data da locação
       - name: return_date
         description: Data do retorno
       - name: inventory_id
