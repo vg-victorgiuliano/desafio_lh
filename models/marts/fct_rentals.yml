@@ -2,15 +2,15 @@ version: 2
 
 models:
   - name: fct_rentals
-    description: Tabala fatos de aluguel, uma linha por aluguel.
+    description: Tabela fatos de locação, uma linha por locação.
     columns:
       - name: sk_rental
-        description: Surrogate key do aluguel (stg_address).
+        description: Surrogate key da locação (stg_address).
         tests:
           - unique
           - not_null
       - name: rental_id
-        description: Chave primária do aluguel (stg_rentals).
+        description: Chave primária da locação (stg_rentals).
       - name: fk_film
         description: Chave estrangeira do filme (dim_films).
       - name: fk_customer
@@ -18,15 +18,15 @@ models:
       - name: fk_staff
         description: Chave estrangeira do funcionário (dim_staff).
       - name: predicted_duration
-        description: Duração do aluguel previsto.
+        description: Duração da locação previsto.
       - name: rental_date
-        description: Data do aluguel.
+        description: Data da locação.
       - name: return_date
         description: Data do retorno.
       - name: actual_duration
-        description: Duração real do aluguel.
+        description: Duração real da locação.
       - name: late_label
-        description: Status do aluguel.
+        description: Status da locação.
       - name: total_payment
         description: Total pago.
       - name: paid_label

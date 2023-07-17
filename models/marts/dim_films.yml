@@ -20,12 +20,14 @@ models:
       - name: list_of_actors
         description: lista de atores presentes no filme.
       - name: rental_duration
-        description: Duração do aluguel.
+        description: Duração da locação.
       - name: rental_rate
-        description: Classificação do aluguel.
+        description: Classificação da locação.
       - name: film_length
         description: Duração do filme
       - name: replacement_cost
         description: Custo de reposição.
       - name: film_rating
         description: Classificação geral do filme.
+      - name: special_features
+        description: Recursos adicionais.

@@ -25,7 +25,8 @@ joined as (
         , rentals.rental_date
         , rentals.return_date
         , rentals.rental_duration as actual_duration
-        , rentals.total_payment
+        , rentals.payment_amount as total_payment
+        , rentals.payment_date
     from rentals
     left join films using (film_id)
     left join staff using (staff_id)
@@ -36,16 +37,15 @@ final as(
     select 
         *
         , case 
-            when predicted_duration >= actual_duration then 'On time'
-            when predicted_duration < actual_duration then 'Late'
-            when actual_duration is null then 'Did not return'
+            when predicted_duration >= actual_duration then 'No prazo'
+            when predicted_duration < actual_duration then 'Atrasado'
+            when actual_duration is null then 'Não voltou'
             end as late_label
         , case
-            when total_payment = 0 then 'did not pay'
-            when total_payment <> 0 then 'paid'
+            when total_payment = 0 then 'Não pagou'
+            when total_payment <> 0 then 'Pago'
             end as paid_label
     from joined
 )
 
-select *from final
-
+select  * from final

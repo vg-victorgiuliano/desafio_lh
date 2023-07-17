@@ -106,12 +106,10 @@ models:
         description: Chave primária da stg_films.
       - name: film_title
         description: Título do filme.
-      - name: film_release_year
-        description: Ano de lançamento do filme.
       - name: rental_duration
-        description: Duração do aluguel.
+        description: Duração da locação.
       - name: rental_rate
-        description: Classificação do aluguel.
+        description: Classificação da locação.
       - name: film_length
         description: Duração do filme
       - name: replacement_cost
@@ -121,7 +119,7 @@ models:
       - name: updated_at
         description: Última atualiação do dado.
       - name: special_features
-        description: Características especiais
+        description: Recursos adicionais
   - name: stg_inventory
     description: Uma linha por produto disponivel.
     columns:
@@ -143,7 +141,7 @@ models:
       - name: staff_id
         description: Chave primária do funcionario (stg_staff).
       - name: rental_id
-        description: Chave primária do aluguel (stg_rentals).
+        description: Chave primária da locação (stg_rentals).
       - name: payment_amount
         description: Valor do pagamento.
       - name: payment_date
@@ -154,7 +152,7 @@ models:
       - name: rental_id
         description: Chave primária da stg_rentals.
       - name: rental_date
-        description: Data do aluguel.
+        description: Data da locação.
       - name: inventory_id
         description: Chave primária do inventário (stg_inventory).
       - name: customer_id

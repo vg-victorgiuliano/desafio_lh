@@ -32,7 +32,7 @@ films_known_actors as (
 films_unknown_actors as(
     select 
         films.film_id
-        , array["unknown_actors"] as list_of_actors
+        , array['unknown_actors'] as list_of_actors
     from films
     where film_id in (257.0, 323.0, 803.0)
     group by 1
@@ -49,7 +49,7 @@ final as(
         {{ dbt_utils.generate_surrogate_key(['films.film_id']) }} as sk_film
         , films.film_id
         , films.film_title
-        , films.film_release_year 
+        , films.film_release_year
         , categories.category_name
         , all_films_actors.list_of_actors
         , films.rental_duration
