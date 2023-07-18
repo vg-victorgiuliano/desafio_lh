@@ -36,6 +36,7 @@ joined as (
 final as(
     select 
         *
+        , round(date_diff(payment_date, rental_date, day)/30, 2) as payment_delay_months
         , case 
             when predicted_duration >= actual_duration then 'No prazo'
             when predicted_duration < actual_duration then 'Atrasado'
