@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: customer_measures
+    description: Detalhes das locações do cliente.
+    columns:
+      - name: sk_customer
+        description: Surrogate key da dim_customers.
+        tests:
+          - unique
+          - not_null
+      - name: customer_fullname
+        description: Nome completo do cliente.
+      - name: customer_country
+        description: País do cliente.
+      - name: n_rentals
+        description: Total de locações do cliente.
+      - name: max_gap
+        description: Máximo período entre locações.
+      - name: life_value
+        description: Total gasto na Discorama.
+      - name: most_recent
+        description: Data da última locação.
+      - name: fav_categories
+        description: Gêneros mais locados pelo cliente.
+  - name: sugested_films
+    description: Filmes relacionados para sugestão.
+    columns:
+      - name: filme1
+        description: Nome do filme.
+      - name: filme2
+        description: Filme relacionado.      
+      - name: total_customers
+        description: Número de clientes que locaram ambos os filmes.
+  - name: top_actors_per_country
+    description: Atores mais locados por pais.
+    columns:
+      - name: customer_country
+        description: País.
+      - name: list_of_ators
+        description: Lista de atores mais locados no país.    
+  - name: top_category_per_country
+    description: Gêneros mais locados por pais.
+    columns:
+      - name: customer_country
+        description: País.
+      - name: category_name
+        description: Gêneros mais locados por país.   

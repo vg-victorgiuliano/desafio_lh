@@ -19,7 +19,8 @@ models:
         description: Nome do país.
       - name: postal_code
         description: Código Postal.
-
+      - name: phone_number
+        description: Telefone.
   - name: int_rentals
     description: Tabale intermediaria de locações.
     columns:
@@ -40,6 +41,8 @@ models:
         description: Data da locação
       - name: return_date
         description: Data do retorno
+      - name: rental_duration
+        description: Duração da locação.
       - name: inventory_id
         description: Chave estrangeira do inventário (stg_inventory)
       - name: payment_id

@@ -10,6 +10,15 @@ inventory as(
     select * from {{ ref('stg_inventory') }}
 ),
 
+payment_sum as(
+    select 
+        rental_id
+        , sum(payment_amount) as payment_amount
+        , max(payment_date) as payment_date
+    from payments
+    group by 1
+),
+
 joined as(
     select
         rentals.rental_id
@@ -21,12 +30,11 @@ joined as(
         , date_diff(cast(rentals.return_date as date), 
                     cast(rentals.rental_date as date), day) as rental_duration
         , rentals.inventory_id
-        , coalesce(payments.payment_amount, 0) as payment_amount
-        , payments.payment_date
+        , coalesce(payment_sum.payment_amount, 0) as payment_amount
+        , payment_sum.payment_date
     from rentals
     left join inventory using (inventory_id)
-    left join payments using (rental_id)
-    where rental_id <> 4591.0
+    left join payment_sum using (rental_id)
     
 ), 
 

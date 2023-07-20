@@ -8,7 +8,7 @@ transformed as(
         , cast(customer_id as integer) as customer_id
         , cast(staff_id as integer) as staff_id
         , cast(rental_id as integer) as rental_id  -- rental_id = 4591.0 com 5 pagamentos
-        , cast(amount as numeric) as payment_amount
+        , cast(amount as numeric) as payment_amount -- total 61312.04
         , cast(payment_date as timestamp) as payment_date -- min 2007-02-14, max 2007-05-14
     from source
 )

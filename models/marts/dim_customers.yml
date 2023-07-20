@@ -13,6 +13,8 @@ models:
         description: Chave primária da stg_customers.
       - name: customer_fullname
         description: Nome completo do cliente.
+      - name: created_at
+        description: Data de cadastro.
       - name: customer_city
         description: Cidade do cliente.
       - name: customer_district
