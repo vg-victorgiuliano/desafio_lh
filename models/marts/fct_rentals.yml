@@ -29,5 +29,7 @@ models:
         description: Status da locação.
       - name: total_payment
         description: Total pago.
+      - name: payment_date
+        description: Data do pagamento.
       - name: paid_label
         description: Status do pagamento.
