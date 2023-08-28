@@ -15,6 +15,7 @@ final as (
         , address.city_name as customer_city
         , address.district as customer_district
         , address.country_name as customer_country
+        , address.district || address.country as full_address
     from customers
     left join address using (address_id)
 
